@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Tansy helps · Tansy</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1c1c1c;
+        background: #fafaf7;
+        --accent: #2f7d4f;
+      }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      .mark { font-weight: 700; color: var(--accent); }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      header a { color: var(--accent); font-size: 10px; }
+      /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+      h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin: 2rem 0 1rem;
+        background: linear-gradient(90deg, #2f7d4f, #d9a21b);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: low-contrast text in a light grey. */
+      .lede { color: #c4c4c4; font-size: 1.1rem; line-height: 1.5; }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .bar { background: #e5e5e0; border-radius: 0.5rem; height: 0.75rem; width: 12rem; transition: width 0.3s; }
+      .bar:hover { width: 100%; }
+      .points { padding-left: 1.2rem; line-height: 1.8; }
+      table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+      th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #e5e5e0; }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edge, no background. */
+      .edge { margin: 2rem 0; padding: 0; max-width: none; position: relative; left: 0; width: 100vw; line-height: 1.5; }
+      footer { color: #555; font-size: 0.9rem; border-top: 1px solid #e5e5e0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="mark">Tansy</span>
+      <a href="/">Back to the front door</a>
+    </header>
+    <main>
+      <h1>Why Tansy helps</h1>
+      <p class="lede">One calm page that says what Tansy is and shows the shared list as it stands right now.</p>
+      <div class="bar" role="img" aria-label="Reading time: under one minute"></div>
+      <ul class="points">
+        <li>Nothing to sign up for: open the page and read.</li>
+        <li>The list is live, so what you see is what the team sees.</li>
+        <li>Short on purpose, so it is easy to come back to.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+        <tbody>
+          <tr><td>Who is it for?</td><td>Anyone who needs the shared list</td></tr>
+          <tr><td>What does it cost?</td><td>Nothing</td></tr>
+          <tr><td>How current is it?</td><td>Updated as items change</td></tr>
+        </tbody>
+      </table>
+      <p class="edge">Tansy keeps the shared list in one place so everyone can see what is open, what is done and what to pick up next without asking around.</p>
+    </main>
+    <footer>Tansy · the front door to the shared list</footer>
+  </body>
+</html>
