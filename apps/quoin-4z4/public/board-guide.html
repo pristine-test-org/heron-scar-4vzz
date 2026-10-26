@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading the board · Quoin</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color: #1c1c1c;
+        background: #fafaf7;
+        --accent: #3b4bc8;
+      }
+      body { margin: 0; }
+      header, main, footer { max-width: 44rem; margin: 0 auto; padding: 1.25rem 1rem; }
+      header { display: flex; justify-content: space-between; align-items: center; }
+      .mark { font-weight: 700; color: var(--accent); }
+      /* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+      header a { color: var(--accent); font-size: 10px; }
+      /* Intentional, for Impeccable's test drive: gradient text on the heading. */
+      h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+        margin: 2rem 0 1rem;
+        background: linear-gradient(90deg, #3b4bc8, #c83b9a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      /* Intentional, for Impeccable's test drive: low-contrast text in a light grey. */
+      .lede { color: #c4c4c4; font-size: 1.1rem; line-height: 1.5; }
+      /* Intentional, for Impeccable's test drive: transition on a layout property. */
+      .meter { background: #e5e5e0; border-radius: 0.5rem; height: 0.75rem; width: 12rem; transition: width 0.3s; }
+      .meter:hover { width: 100%; }
+      .steps { padding-left: 1.2rem; line-height: 1.8; }
+      table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+      th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid #e5e5e0; }
+      /* Intentional, for Impeccable's test drive: body text flush with the viewport edge, no background. */
+      .edge { margin: 2rem 0; padding: 0; max-width: none; position: relative; left: 0; width: 100vw; line-height: 1.5; }
+      footer { color: #555; font-size: 0.9rem; border-top: 1px solid #e5e5e0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="mark">Quoin</span>
+      <a href="/">Back to the board</a>
+    </header>
+    <main>
+      <h1>Reading the board</h1>
+      <p class="lede">Every item on the shared list shows up on the board the moment it is added, newest first.</p>
+      <div class="meter" role="img" aria-label="Board capacity: 5 of 5 slots in view"></div>
+      <ol class="steps">
+        <li>Open the board and look at the five newest items.</li>
+        <li>A check mark means the item is done.</li>
+        <li>Items without a mark are still waiting on someone.</li>
+      </ol>
+      <table>
+        <thead><tr><th>Mark</th><th>Meaning</th><th>Shown at</th></tr></thead>
+        <tbody>
+          <tr><td>✓</td><td>Done</td><td>Top of the list</td></tr>
+          <tr><td>(none)</td><td>Open</td><td>In date order</td></tr>
+          <tr><td>…</td><td>Loading</td><td>While the list loads</td></tr>
+        </tbody>
+      </table>
+      <p class="edge">The board shows the five most recent entries from the shared list, so nothing older than the latest handful gets in the way of what needs doing now.</p>
+    </main>
+    <footer>Quoin · the board for the shared list</footer>
+  </body>
+</html>
